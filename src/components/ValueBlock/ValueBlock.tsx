@@ -1,3 +1,5 @@
+"use client";
+import { useState, useEffect } from 'react';
 type ValueBlockData = {
   Title: string;
   url: string;
@@ -6,63 +8,150 @@ type ValueBlockData = {
 };
 
 export default function ValueBlock({ data }: { data: ValueBlockData }) {
+  const [isDesktop, setIsDesktop] = useState(true);
+
+  useEffect(() => {
+    const checkWidth = () => {
+      setIsDesktop(window.innerWidth >= 1025);
+    };
+    checkWidth();
+    window.addEventListener('resize', checkWidth);
+    return () => window.removeEventListener('resize', checkWidth);
+  }, []);
+
+  if (!isDesktop) {
+    if (!isDesktop) {
+      return (
+        <div
+          style={{ backgroundImage: `url(${data.url})` }}
+          className="relative w-full h-screen bg-left bg-cover bg-no-repeat"
+        >
+          {/* === Block 1: Top === */}
+          <div className="w-full h-[40vh] bg-keyBlue flex mix-blend-multiply">
+            <div className="w-1/24 h-full"></div>
+            <div className="w-21/24 h-full"></div>
+            <div className="w-2/24 h-full"></div>
+          </div>
+          {/* Content TOP tách riêng, giữ tỉ lệ */}
+          <div className="absolute top-0 w-full h-[40vh] flex">
+            <div className="w-1/24 h-full"></div>
+            <div className="w-21/24 h-full flex flex-col justify-center">
+              <p className="text-white font-gothic text-[50px] leading-tight">
+                VALUE OF 340B HEALTH
+              </p>
+              <p className="text-second font-fave text-[100px] leading-tight">
+                Membership
+              </p>
+            </div>
+            <div className="w-2/24 h-full"></div>
+          </div>
+
+          {/* === Block 2: Middle === */}
+          <div className="w-full h-[30vh]">
+            <div className="z-10 w-full h-full flex">
+              <div className="w-3/24 h-full bg-keyBlue mix-blend-multiply"></div>
+              <div className="w-19/24 h-full"></div>
+              <div className="w-2/24 h-full bg-keyBlue mix-blend-multiply"></div>
+            </div>
+          </div>
+
+          {/* === Block 3: Bottom === */}
+          <div className="w-full h-[30vh] flex bg-keyBlue mix-blend-multiply">
+            <div className="w-1/24 h-full"></div>
+            <div className="w-21/24 h-full"></div>
+            <div className="w-2/24 h-full"></div>
+          </div>
+          {/* Content BOTTOM tách riêng, giữ tỉ lệ */}
+          <div className="absolute bottom-0 w-full h-[30vh] flex">
+            <div className="w-1/24 h-full"></div>
+            <div className="w-21/24 h-full flex flex-col">
+              <div className="w-full h-1/3 flex items-center">
+                <strong><h3
+                  className="
+      text-white
+      leading-tight
+      line-clamp-3
+      text-[clamp(2rem,3vw,3rem)]
+    "
+                >
+                  {data.Title2}
+                </h3></strong>
+              </div>
+
+              <div className="w-full h-2/3 flex items-center">
+                <h3 className="text-white">{data.subject}</h3>
+              </div>
+            </div>
+            <div className="w-2/24 h-full"></div>
+          </div>
+        </div>
+      );
+    }
+
+
+  }
   return (
     <div
       style={{ backgroundImage: `url(${data.url})` }}
       className="relative w-full h-screen bg-left bg-cover bg-no-repeat"
     >
-      <div className="w-full h-full flex flex-col">
-        <div className="relative w-full h-1/3 flex flex-col justify-center px-10">
-          <div className="absolute inset-0 bg-keyBlue mix-blend-multiply"></div>
-          <h1 className="relative z-10 text-white text-5xl lg:text-6xl font-bold">{data.Title}</h1>
-          <h1 className="relative font-fave z-10 text-head text-9xl lg:text-9xl italic">
-            Membership
-          </h1>
-        </div>
-        <div className="hidden lg:flex w-full h-2/3">
-          <div className="relative flex-1">
-            <div className="absolute top-0 left-0 w-[10%] h-[80%] bg-keyBlue mix-blend-multiply"></div>
-            <div className="absolute bottom-0 left-0 w-full h-[20%] bg-keyBlue mix-blend-multiply"></div>
-          </div>
-          <div className="relative flex-1 px-[5vh] flex flex-col justify-center">
-            <div className="absolute inset-0 bg-keyBlue mix-blend-multiply"></div>
-            <div className="relative z-10">
-              <h1 className="text-white text-[40px] font-bold">{data.Title2}</h1>
-              <p className="text-white text-[15px] mt-4">
-                At 340B Health, we understand the unique pressures and opportunities facing today’s 340B hospital leaders.
-                That is why we are here to equip senior leadership with the tools and expertise you need to make a measurable
-                impact on your 340B operations. We can help you optimize your hospital’s efficiency and effectiveness so you
-                can serve your patients best. 340B Health is your trusted partner in transforming your hospital’s 340B efforts
-                into sustainable success.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="block lg:hidden w-full h-2/3 flex flex-col">
-          <div className="w-full h-1/2 flex">
-            <div className="w-[10vh] h-full bg-keyBlue mix-blend-multiply"></div>
-            <div className="flex-1"></div>
-            <div className="w-[10vh] h-full bg-keyBlue mix-blend-multiply"></div>
-          </div>
-          <div className="relative w-full h-1/2 flex items-center justify-center px-6">
-            <div className="absolute inset-0 bg-keyBlue mix-blend-multiply"></div>
-            <div className="relative z-10 text-center max-w-2xl mx-auto px-4">
-              <h1 className="text-white text-1xl md:text-xl font-bold">
-                {data.Title2}
-              </h1>
-              <p className="text-white text-sm md:text-base mt-4 leading-relaxed">
-                At 340B Health, we understand the unique pressures and opportunities
-                facing today’s 340B hospital leaders. That is why we are here to equip
-                senior leadership with the tools and expertise you need to make a measurable
-                impact on your 340B operations. We can help you optimize your hospital’s
-                efficiency and effectiveness so you can serve your patients best. 340B Health
-                is your trusted partner in transforming your hospital’s 340B efforts into
-                sustainable success.
-              </p>
-            </div>
+      <div className="w-full h-full flex">
+        <div className="w-1/24 h-full bg-keySecond mix-blend-multiply"></div>
 
+        <div className="w-21/24 h-full relative">
+          {/* ✅ Top overlay FIXED */}
+          <div className="w-full h-4/10 relative">
+            {/* Layer màu blend */}
+            <div className="absolute inset-0   font-fave bg-keySecond mix-blend-multiply"></div>
+
+            {/* Layer chữ KHÔNG blend */}
+            <div className="absolute inset-0 flex items-center">
+              <div className="flex flex-col text-left pl-0">
+                <p className="text-white font-gothic text-[50px] leading-tight">
+                  VALUE OF 340B HEALTH
+                </p>
+                <p className="  text-second font-fave text-[100px] leading-tight">
+                  Membership
+                </p>
+              </div>
+            </div>
           </div>
+
+          {/* Middle block with blended color */}
+          <div className="w-full h-5/10 flex">
+            <div className="w-1/2 h-full"></div>
+            <div className="w-1/2 h-full bg-keySecond mix-blend-multiply"></div>
+
+            {/* ✅ Content layer TRÊN overlay */}
+            <div className="absolute top-[40%] left-1/2 w-1/2 h-5/10 flex">
+              <div className="w-2/10 h-full"></div>
+              <div className="w-8/10 h-full flex items-center">
+                <div className="w-full h-[80%] flex flex-col gap-4">
+                  <div className="flex-[1] flex items-center justify-center p-2">
+                    <h3
+                      className="
+                        text-white
+                        leading-tight
+                        line-clamp-3
+                        text-[clamp(1rem,3vw,3rem)]
+                      "
+                    >
+                      {data.Title2}
+                    </h3>
+                  </div>
+                  <div className="flex-[2] flex items-center justify-center p-2">
+                    <h3 className="text-white">{data.subject}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom overlay */}
+          <div className="w-full h-1/10 bg-keySecond mix-blend-multiply"></div>
         </div>
+
+        <div className="w-2/24 h-full bg-keySecond mix-blend-multiply"></div>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 type DataHead = {
   image: string;
@@ -9,61 +9,63 @@ type DataHead = {
 };
 
 export default function HeaderBlock({ data }: { data: DataHead }) {
-  return (
-    <>
-      <div
-        style={{ backgroundImage: `url(${data.image})` }}
-        className="
-              w-full h-screen
-              bg-cover
-              bg-right
-              bg-no-repeat
-            "
-      >
-        <div className="w-full h-full">
-          <div className="relative flex">
-            <div className="absolute inset-0 bg-primary mix-blend-multiply"></div>
-            <div className="relative flex flex-1">
-            </div>
-            <div className="relative flex flex-1 justify-end p-[7.5vh]">
-            </div>
-          </div>
-          <div className="hidden md:flex flex-col md:flex-row w-full h-[85%]">
-            <div className="relative flex flex-col items-start justify-center w-fit max-w-[100%] px-[5vh]">
-              <div className="absolute inset-0 bg-primary mix-blend-multiply"></div>
-              <h1 className="relative z-10 text-white text-4xl md:text-6xl">{data.Title}</h1>
-              <h1 className="relative z-10 text-head font-fave text-9xl md:text-7xl">{data.Title2}</h1>
-            </div>
-            <div className="flex flex-1">
-              <div className="w-full h-full">
-                <div className="w-[60%] h-[70%]"></div>
-                <div className="w-full h-[30%] bg-primary mix-blend-multiply"></div>
-              </div>
-              <div className="w-[20%] h-full bg-primary mix-blend-multiply"></div>
-            </div>
-          </div>
-          <div className="block md:hidden w-full h-[85%] flex items-center justify-center">
-            <div className="w-full h-full relative">
-              <div className="relative w-full h-[20vh] p-[1vh]">
-                <div className="absolute inset-0 bg-primary mix-blend-multiply"></div>
-                <div className="relative z-10">
-                  <h1 className="text-white text-4xl md:text-6xl ">{data.Title}</h1>
-                  <h1 className="text-head font-fave text-5xl md:text-7xl">{data.Title2}</h1>
-                </div>
-              </div>
-              <div className="w-full h-[60%] flex">
-                <div className="w-[10vh] h-full bg-primary mix-blend-multiply"></div>
-                <div className="flex-1"></div>
-                <div className="w-[10vh] h-full bg-primary mix-blend-multiply"></div>
-              </div>
-              <div className="w-full h-[20vh] relative">
-                <div className="absolute inset-0 bg-primary mix-blend-multiply"></div>
-              </div>
-            </div>
-          </div>
+  const [isDesktop, setIsDesktop] = useState(true);
 
+  useEffect(() => {
+    const checkWidth = () => setIsDesktop(window.innerWidth >= 1025);
+    checkWidth();
+    window.addEventListener('resize', checkWidth);
+    return () => window.removeEventListener('resize', checkWidth);
+  }, []);
+
+  const overlayColor = 'bg-primary mix-blend-multiply';
+
+  if (!isDesktop) {
+    // Mobile & tablet layout
+    return (
+      <div
+        style={{
+          backgroundImage: `url(${data.image})`,
+          backgroundSize: '200% 100%',
+          backgroundPosition: 'right center',
+          backgroundRepeat: 'no-repeat',
+        }}
+        className="relative w-full h-screen overflow-hidden bg-no-repeat bg-cover"
+      >
+        <div className={`absolute inset-x-0 top-0 h-1/2 ${overlayColor}`} />
+        <div className={`absolute top-1/2 left-0 w-3/24 h-3/10 ${overlayColor}`} />
+        <div className={`absolute top-1/2 right-0 w-2/24 h-3/10 ${overlayColor}`} />
+        <div className={`absolute bottom-0 inset-x-0 h-1/5 ${overlayColor}`} />
+        <div className="relative z-10 px-[4.1667%] pt-[20vh] h-1/2 flex flex-col">
+          <p className="text-5xl md:text-6xl font-gothic text-white">
+            {data.Title}
+          </p>
+          <p className="text-6xl md:text-7xl text-head font-fave italic">
+            {data.Title2}
+          </p>
+        </div>
+        <div className="h-3/10" />
+        <div className="h-1/5" />
+      </div>
+    );
+  }
+  // Desktop layout
+  return (
+    <div
+      style={{ backgroundImage: `url(${data.image})` }}
+      className="w-full h-screen bg-cover bg-right bg-no-repeat relative">
+      <div className={`h-[20vh] w-full ${overlayColor}`} />
+      <div className="relative h-[70vh] w-full flex">  
+        <div className={`h-full w-1/24 ${overlayColor}`} />
+        <div className={`h-full w-8/24 ${overlayColor}`} />
+        <div className="h-full w-14/24" />
+        <div className={`h-full w-1/24 ${overlayColor}`} />
+        <div className="absolute z-10 top-0 left-[4.1667%] w-[33.3333%] h-full flex flex-col justify-center">
+          <p className="text-[5vw] font-gothic text-white">{data.Title}</p>
+          <p className="text-[120px] text-second font-fave ">{data.Title2}</p>
         </div>
       </div>
-    </>
+      <div className={`h-[10vh] w-full ${overlayColor}`} />
+    </div>
   );
 }

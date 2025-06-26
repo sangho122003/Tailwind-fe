@@ -1,11 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
+import Logo from '@/utils/Logo/Logo';
 
 export default function Menu() {
   const [hasScrolled, setHasScrolled] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       setHasScrolled(window.scrollY > 0);
@@ -13,34 +12,28 @@ export default function Menu() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   return (
-    <header className="fixed top-0 left-0 w-full h-[10vh] z-50">
-      {/* Overlay: show when scrolled */}
-      <div
-        className={`absolute inset-0 bg-primary mix-blend-multiply transition-opacity duration-300 ${hasScrolled ? 'opacity-100' : 'opacity-0'
-          }`}
-      ></div>
-
-      <div className="relative max-w-7xl mx-auto flex items-center justify-between h-full px-6">
-        <div className="flex items-center gap-3">
-          <Image
-            src="/icon/Vector.png"
-            alt="logo"
-            width={40}
-            height={40}
-            className="h-10 w-10 object-contain"
-          />
-          <h1 className="text-2xl md:text-3xl text-white font-light">
-            340B<span className="font-extrabold">HEALTH</span>
-          </h1>
-
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 
+        ${hasScrolled ? 'bg-primary' : 'bg-transparent'}
+        flex flex-col min-h-[90px] h-[8.46vw] max-h-[120px]
+      `}
+    >
+      <div className="flex-1" />
+      <div className="flex-1 flex px-[4.17vw]">
+        <div className="flex-[5] flex items-center">
+          <Logo />
         </div>
-
-        <button className="h-[40px] md:h-[50px] bg-second text-white px-6 rounded hover:bg-keyBlue/90 transition">
-          SCHEDULE CALL
-        </button>
+        <div className="flex-[13]" />
+        <div className="flex-[4] flex items-center justify-end pr-1">
+          <button
+            className="bg-[#1C8295] pl-2 pt-2 pr-2 pb-2 h-full flex items-center justify-center text-[15px] sm:text-[25px] font-semibold tracking-wide text-white whitespace-nowrap border border-transparent hover:bg-transparent hover:border-white transition-all duration-300"
+          >
+            SCHEDULE A CALL
+          </button>
+        </div>
       </div>
+      <div className="flex-1" />
     </header>
   );
 }

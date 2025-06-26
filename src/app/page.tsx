@@ -10,7 +10,7 @@ import VideoBlock from '@/components/VideoBlock/VideoBlock';
 import VideoBlockHead from '@/components/VideoBlockHead/VideoBlockHead';
 import { DATA_ARRAY } from '@/constants/data';
 export const metadata = {
-  title: "Boost Your 340B Potential | 340B Health",
+  title: " 340B Health",
   description: "Improve your hospital's 340B program operations with 340B Health.",
 };
 
