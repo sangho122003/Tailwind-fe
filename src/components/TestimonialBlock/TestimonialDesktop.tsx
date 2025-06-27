@@ -20,7 +20,7 @@ export default function TestimonialDesktop({ data }: { data: TestimonialData }) 
         <div className="flex-[1]" />
 
         <div className="flex-[12] flex flex-col justify-center">
-          <h2 className="text-[24px] font-extrabold uppercase leading-tight">
+          <h2 className="text-[24px] font-omnes leading-tight">
             {data.dis}
           </h2>
           <p className="text-[20px] italic font-normal leading-relaxed mb-4">

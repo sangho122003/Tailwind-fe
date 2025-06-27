@@ -157,7 +157,7 @@ export const DATA_ARRAY = [
     TestimonialBlock: {
       title: "Real Impact from 340B Health Membership",
       title2: "Pharmacy teams trust 340B Health for expert guidance, compliance support, and industry connections that drive results.",
-      dis: "“The expertise 340B Health provides helps us avoid compliance pitfalls and keeps our pharmacy team prepared for any audit.”",
+      dis: "“The most valuable thing about the 340B membership is certainly the sharing of information, the ability to ask questions and get answers, and it’s everybody working towards the same goal. It’s a huge resource for us.””",
       dis2: "Tanya Miller",
       dis3: "West Virginia University Hospitals, WV"
     },

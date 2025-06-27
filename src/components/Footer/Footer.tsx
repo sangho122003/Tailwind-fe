@@ -18,7 +18,7 @@ export default function Footer() {
             </p>
           </div>
           <div />
-          <div className="flex flex-col items-start gap-3">
+          <div className="flex flex-col items-start gap-3 ">
             <h1 className="text-[13px] sm:text-[15px] md:text-[18px] lg:text-[20px] font-bold whitespace-nowrap">
               STAY CONNECTED
             </h1>
