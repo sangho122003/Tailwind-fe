@@ -6,7 +6,7 @@ import HeaderBlock from '@/components/HeaderBlock';
 import TestimonialBlock from '@/components/TestimonialBlock';
 import ValueBlock from '@/components/ValueBlock';
 import VideoBlock from '@/components/VideoBlock/VideoBlock';
-import VideoBlockHead from '@/components/VideoBlockHead/VideoBlockHead';
+import VideoBlockHead from '@/components/VideoBlockHead';
 
 import { DATA_ARRAY } from '@/constants/data';
 import Menu from '@/components/Menu/Menu';
