@@ -64,7 +64,7 @@ export const DATA_ARRAY = [
       Title2: "Influence"
     },
     VideoBlock: {
-      urlvideo: "https://www.youtube.com/watch?v=4Ithij_RrH4&list=RD4Ithij_RrH4&start_radio=1",
+      urlvideo: "https://www.youtube.com/embed/1LMyFUBXLGg",
       Title: "ELEVATE YOUR HOSPITAL'S ADVOCACY EFFORTS WITH A 340B HEALTH MEMBERSHIP",
       Dis: "Discover how 340B Health helps advocacy leaders build stronger programs and protect patient savings."
     },
@@ -110,7 +110,7 @@ export const DATA_ARRAY = [
       dis: "Stay ahead of policy changes with 340B Health’s exclusive updates, in-depth analyses, and expert insights. With real-time access to critical information, your advocacy team will be prepared to respond proactively to evolving legislative challenges and support 340B’s future."
     },
     VideoBlockSecond: {
-      url: "'https://www.youtube.com/embed/watch?v=1LMyFUBXLGg&ab_channel=340BHealth'"
+      url: "'https://www.youtube.com/embed/FnHKdyL7WSI'"
     }
   },
   {
@@ -121,7 +121,7 @@ export const DATA_ARRAY = [
       Title2: "Guidance"
     },
     VideoBlock: {
-      urlvideo: "https://www.youtube.com/watch?v=4Ithij_RrH4&list=RD4Ithij_RrH4&start_radio=1",
+      urlvideo: "https://www.youtube.com/embed/1LMyFUBXLGg",
       Title: "EMPOWER YOUR PHARMACY TEAM WITH 340B HEALTH",
       Dis: "Gain access to tools and best practices that support compliance and drive pharmacy program success."
     },
@@ -167,7 +167,7 @@ export const DATA_ARRAY = [
       dis: "Stay ahead of industry changes and regulatory updates with 340B Health’s exclusive reports, newsletters, and expert analysis. With support from 340B Health, your pharmacy team will be prepared to respond proactively to evolving 340B requirements and ensure your program remains compliant."
     },
     VideoBlockSecond: {
-      url: "https://www.youtube.com/watch?v=4Ithij_RrH4&list=RD4Ithij_RrH4&start_radio=1"
+      url: "https://www.youtube.com/embed/FnHKdyL7WSI"
     }
   }
 ];
