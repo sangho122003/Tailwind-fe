@@ -1,16 +1,16 @@
 
 
-import BenefitsBlock from '@/components/BenefitsBlock/BenefitsBlock';
+import BenefitsBlock from '@/components/BenefitsBlock';
 import Footer from '@/components/Footer/Footer';
-import HeaderBlock from '@/components/HeaderBlock/HeaderBlock';
-import TestimonialBlock from '@/components/TestimonialBlock/TestimonialBlock';
-import ValueBlock from '@/components/ValueBlock/ValueBlock';
+import HeaderBlock from '@/components/HeaderBlock';
+import TestimonialBlock from '@/components/TestimonialBlock';
+import ValueBlock from '@/components/ValueBlock';
 import VideoBlock from '@/components/VideoBlock/VideoBlock';
 import VideoBlockHead from '@/components/VideoBlockHead/VideoBlockHead';
 
 import { DATA_ARRAY } from '@/constants/data';
 import Menu from '@/components/Menu/Menu';
-import Subtract from '@/components/Subtract/Subtract';
+import Subtract from '@/components/Subtract';
 export const metadata = {
   title: " GOVRELATIONS",
   description: "Improve your hospital's 340B program operations with 340B Health.",

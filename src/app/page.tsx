@@ -1,13 +1,13 @@
 
 
-import BenefitsBlock from '@/components/BenefitsBlock/BenefitsBlock';
+import BenefitsBlock from '@/components/BenefitsBlock';
 import Footer from '@/components/Footer/Footer';
-import HeaderBlock from '@/components/HeaderBlock/HeaderBlock';
+import HeaderBlock from '@/components/HeaderBlock';
 import Menu from '@/components/Menu/Menu';
-import TestimonialBlock from '@/components/TestimonialBlock/TestimonialBlock';
-import ValueBlock from '@/components/ValueBlock/ValueBlock';
+import TestimonialBlock from '@/components/TestimonialBlock';
+import ValueBlock from '@/components/ValueBlock';
 import VideoBlock from '@/components/VideoBlock/VideoBlock';
-import VideoBlockHead from '@/components/VideoBlockHead/VideoBlockHead';
+import VideoBlockHead from '@/components/VideoBlockHead';
 import { DATA_ARRAY } from '@/constants/data';
 export const metadata = {
   title: " 340B Health",

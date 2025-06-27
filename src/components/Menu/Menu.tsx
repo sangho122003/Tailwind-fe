@@ -25,7 +25,7 @@ export default function Menu() {
           <Logo />
         </div>
         <div className="flex-[13]" />
-        <div className="flex-[4] flex items-center justify-end pr-1">
+        <div className="flex-[4] flex items-center justify-end ">
           <button
             className="bg-[#1C8295] pl-2 pt-2 pr-2 pb-2 h-full flex items-center justify-center text-[15px] sm:text-[25px] font-semibold tracking-wide text-white whitespace-nowrap border border-transparent hover:bg-transparent hover:border-white transition-all duration-300"
           >
