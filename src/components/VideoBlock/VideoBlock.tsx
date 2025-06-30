@@ -9,7 +9,7 @@ export default function VideoBlock({ data }: { data: video }) {
       <div className="block lg:hidden  w-full h-[21vh] flex">
         <div className=" hidden lg:blockw-[10.4167%]"></div>
         <div className="w-[54.1667%] h-full relative flex flex-col justify-between text-center">
-          <span className="w-full h-1/2 flex items-center text-second font-gothic text-[10vh] font-bold uppercase">
+          <span className="w-full h-1/2 flex items-center text-secondary font-gothic text-[10vh] font-bold uppercase">
             SCHEDULE
           </span>
           <span className="w-full h-1/2 flex items-center font-fave text-primary text-[12vh] font-bold">
@@ -34,7 +34,7 @@ export default function VideoBlock({ data }: { data: video }) {
         <div className="hidden lg:block w-[2.0833%] h-full"></div>
         <div className="hidden lg:flex w-[25%] h-full items-center justify-center">
           <div className="w-[24vh] h-[21vh] flex flex-col justify-between text-center">
-            <span className="w-full h-1/2 flex items-center text-second font-gothic text-[10vh] font-bold uppercase">
+            <span className="w-full h-1/2 flex items-center text-secondary font-gothic text-[10vh] font-bold uppercase">
               SCHEDULE
             </span>
             <span className="w-full h-1/2 flex items-center font-fave text-primary text-[12vh] font-bold">

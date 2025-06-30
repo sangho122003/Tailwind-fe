@@ -9,16 +9,13 @@
   --font-gothic: 'trade-gothic-next-compressed', sans-serif;
   --font-omnes: 'omnes-pro', sans-serif;
   --color-primary: #DA6027;
-  --color-second: #1C8295;
-  --color-head: #7ACAB9;
-  --color-keyBlue:#1C8295;
-  --color-keySecond:#007C96;
-  --color-keythr:#1C829599;
+  --color-secondary: #1C8295;
+  --color-accent: #7ACAB9;
+  --color-info:#1C8295;
+  --color-tertiary:#007C96;
+  --color-muted:#1C829599;
   --color-ink:#1E1E1E
-
 }
-
-/* 👉 4️⃣ Cấu hình khác giữ nguyên */
 @media (prefers-color-scheme: dark) {
   :root {
     --columns: 24;

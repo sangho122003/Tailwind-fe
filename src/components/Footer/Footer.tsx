@@ -32,7 +32,7 @@ export default function Footer() {
               ].map((src, i) => (
                 <div
                   key={i}
-                  className="relative size-10 sm:size-12 bg-head rounded-full overflow-hidden"
+                  className="relative size-10 sm:size-12 bg-accent rounded-full overflow-hidden"
                 >
                   <Image
                     src={src}
