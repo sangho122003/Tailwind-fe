@@ -1,9 +1,10 @@
 'use client';
 
 export type videodata = {
+  id:string;
   urlvideo: string;
-  Title: string;
-  Dis: string;
+  title: string;
+  dis: string;
 };
 
 export default function VideoBlockHead({ data }: { data: videodata }) {
@@ -41,9 +42,9 @@ function VideoDesktopHead({ data }: { data: videodata }) {
               <div className="h-1/4" />
               <div className="h-1/2 flex flex-col justify-center">
                 <h1 className="text-[25px] text-secondary font-bold leading-tight">
-                  {data.Title}
+                  {data.title}
                 </h1>
-                <p className="text-[20px] pt-4">{data.Dis}</p>
+                <p className="text-[20px] pt-4">{data.dis}</p>
               </div>
               <div className="h-1/4" />
             </div>
@@ -67,9 +68,9 @@ function VideoMobileHead({ data }: { data: videodata }) {
         />
       </div>
       <h1 className="text-[16px] font-semibold text-secondary leading-snug mb-1">
-        {data.Title}
+        {data.title}
       </h1>
-      <p className="text-[13px] text-black leading-snug">{data.Dis}</p>
+      <p className="text-[13px] text-black leading-snug">{data.dis}</p>
     </div>
   );
 }

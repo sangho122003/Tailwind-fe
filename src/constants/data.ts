@@ -12,7 +12,6 @@
         Dis: "Discover best practices and insights from member hospitals on optimizing 340B program savings for the benefit of your patients and the communities you serve."
       },
       ValueBlock: {
-        Title: "VALUE OF 340B HEALTH Membership",
         url: "/index/index2.png",
         Title2: "Empowering 340B leaders for greater 340B program impact.",
         subject: "At 340B Health, we equip senior leadership with tools and expertise to maximize program efficiency and better serve patients."
@@ -66,7 +65,6 @@
         Dis: "Discover how 340B Health helps advocacy leaders build stronger programs and protect patient savings."
       },
       ValueBlock: {
-        Title: "VALUE OF 340B HEALTH Membership",
         url: "/govrelations/govrelation2.png",
         Title2: "Empowering your advocacy leadership.",
         subject: "Supporting advocacy leaders for a stronger 340B program. Gain access to tools and networks that enhance your hospital’s policy influence and protect 340B savings."
@@ -120,7 +118,6 @@
         Dis: "Gain access to tools and best practices that support compliance and drive pharmacy program success."
       },
       ValueBlock: {
-        Title: "VALUE OF 340B HEALTH Membership",
         url: "/pharmacy/pharmacy2.png",
         Title2: "Equipping pharmacy teams for success.",
         subject: "Supporting pharmacy teams for 340B success. Equip your staff with resources and connections to ensure compliance and maximize program benefits."
