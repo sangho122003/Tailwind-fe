@@ -2,14 +2,16 @@
     {
       type: "Csuite",
       HeaderBlock: {
+        id:1,
         image: "/index/index.png",
-        Title: "BOOST YOUR",
-        Title2: "340B Potential"
+        title: "BOOST YOUR",
+        title2: "340B Potential"
       },
       VideoBlock: {
+        id:1,
         urlvideo:"https://www.youtube.com/embed/1LMyFUBXLGg",
-        Title: "IMPROVE YOUR HOSPITAL'S 340B PROGRAM OPERATIONS WITH 340B HEALTH",
-        Dis: "Discover best practices and insights from member hospitals on optimizing 340B program savings for the benefit of your patients and the communities you serve."
+        title: "IMPROVE YOUR HOSPITAL'S 340B PROGRAM OPERATIONS WITH 340B HEALTH",
+        dis: "Discover best practices and insights from member hospitals on optimizing 340B program savings for the benefit of your patients and the communities you serve."
       },
       ValueBlock: {
         url: "/index/index2.png",

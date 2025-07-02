@@ -26,7 +26,7 @@ export const metadata = {
       <Menu />
       <main>
         <HeaderBlock data={datafetch.headerBlocks[0]} />
-        <VideoBlockHead data={datafetch.videoBlocks[0]} />
+        <VideoBlockHead data  ={datafetch.videoBlocks[0]} />
         <ValueBlock data={csuiteData?.ValueBlock} /> 
         <BenefitsBlock data={csuiteData?.BenefitsBlock} />
         <TestimonialBlock data={csuiteData?.TestimonialBlock} />

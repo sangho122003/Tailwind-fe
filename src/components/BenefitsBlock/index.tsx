@@ -41,7 +41,7 @@ export default function BenefitsBlock({ data }: { data: BenefitsBlockData }) {
           {icons.map((icon, index) => (
             <div key={index} className="flex flex-col gap-4">
               <div className="flex items-center h-[140px] gap-6">
-                <div className="relative w-[118px] h-[118px] rounded-xl overflow-hidden flex-shrink-0 bg-gray-100 shadow-md">
+                <div className="relative w-[118px] h-[118px] rounded-xl overflow-hidden flex-shrink-0">
                   <Image
                     src={icon.Image}
                     alt={icon.title}
@@ -50,7 +50,7 @@ export default function BenefitsBlock({ data }: { data: BenefitsBlockData }) {
                   />
                 </div>
                 <h3 className="text-xl md:text-lg font-semibold text-ink">
-                  {icon.title}
+                  {icon.title}  
                 </h3>
               </div>
               <p className="text-ink text-base leading-relaxed">{icon.dis}</p>
