@@ -53,8 +53,6 @@ export default function ValueBlock({ data }: { data: ValueBlockData }) {
               </div>
             </div>
           </div>
-          
-          {/* Bottom section */}
           <div className="absolute bottom-0 w-full h-1/10 bg-secondary bg-opacity-60 mix-blend-multiply" />
         </div>
         <div className="col-span-2 bg-secondary bg-opacity-60 mix-blend-multiply" />
@@ -79,7 +77,7 @@ export default function ValueBlock({ data }: { data: ValueBlockData }) {
       <div className="absolute inset-0 flex flex-col">
         <div className="hidden lg:flex flex-col h-full">
           <div className="h-4/10 flex items-center pl-[4.1667%]">
-            <div className="flex flex-col text-left">
+            <div className="flex flex-col text-left ">
               <p className="text-white font-gothic text-[50px] leading-tight">
                 VALUE OF 340B HEALTH
               </p>
@@ -92,8 +90,8 @@ export default function ValueBlock({ data }: { data: ValueBlockData }) {
         </div>
         <div className="lg:hidden flex flex-col h-full">
           <div className="h-[40vh] flex items-center pl-[4.1667%]">
-            <div className="flex flex-col">
-              <p className="text-white font-gothic text-[50px] leading-tight">
+            <div className="flex flex-col mr-[1%]">
+              <p className="text-white font-gothic text-[48.5px] leading-tight ">
                 VALUE OF 340B HEALTH
               </p>
               <p className="text-accent font-fave text-[100px] leading-tight">

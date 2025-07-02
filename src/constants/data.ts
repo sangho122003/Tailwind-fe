@@ -43,7 +43,7 @@
       },
       TestimonialBlock: {
         title: "Real Results from 340B Health Members",
-        title2: "See how hospital leaders leverage 340B Health’s expertise, resources, and connections to elevate their 340B operations and expand patient care."
+        dis: "See how hospital leaders leverage 340B Health’s expertise, resources, and connections to elevate their 340B operations and expand patient care."
       },
       Subtract: {
         Image: "",
@@ -95,8 +95,9 @@
         }
       },
       TestimonialBlock: {
+        id:1,
         title: "Real Advocacy Impact from 340B Health Members",
-        title2: "Members rely on 340B Health to amplify their voice, provide timely policy updates, and connect with government leaders.",
+        dis: "Members rely on 340B Health to amplify their voice, provide timely policy updates, and connect with government leaders.",
       },
       Subtract: {
         Image:"/govrelations/govrelation3.png",

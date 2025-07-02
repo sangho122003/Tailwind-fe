@@ -1,11 +1,9 @@
 'use client';
 
 export type TestimonialData = {
+  id:string,
   title: string;
-  title2: string;
   dis: string;
-  dis2: string;
-  dis3: string;
 };
 
 export default function TestimonialBlock({ data }: { data: TestimonialData }) {
@@ -25,7 +23,7 @@ function TestimonialDesktop({ data }: { data: TestimonialData }) {
           <h1 className="text-[34px] font-extrabold uppercase leading-tight">
             {data.title}
           </h1>
-          <p className="mt-3 text-[14px] leading-relaxed">{data.title2}</p>
+          <p className="mt-3 text-[14px] leading-relaxed">{data.dis}</p>
         </div>
 
         <div className="flex-[1]" />
@@ -50,12 +48,12 @@ function TestimonialMobile({ data }: { data: TestimonialData }) {
       <h1 className="text-[20px] font-medium leading-tight mb-2">
         {data.title}
       </h1>
-      <p className="text-[14px] mb-4">{data.title2}</p>
-      <p className="text-[20px] font-omnes mb-4">{data.dis}</p>
+      <p className="text-[14px] mb-4">{data.dis}</p>
+      <p className="text-[20px] font-omnes mb-4">“The most valuable thing about the 340B membership is certainly the sharing of information, the ability to ask questions and get answers, and it’s everybody working towards the same goal. It’s a huge resource for us.”</p>
       <p className="text-[24px] italic font-normal leading-relaxed mb-4">
-        {data.dis2}
+        Tanya Miller
       </p>
-      <p className="text-[14px]">{data.dis3}</p>
+      <p className="text-[14px]">West Virginia University Hospitals, WV</p>
     </div>
   );
 }

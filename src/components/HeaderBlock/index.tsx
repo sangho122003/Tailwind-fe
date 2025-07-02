@@ -44,14 +44,14 @@ export default function HeaderBlock({ data }: { data: DataHead }) {
         <div className={`col-span-1 ${overlayColor}`} />
       </div>
 
-      <div className={`absolute bottom-0 inset-x-0 h-1/5 lg:h-[10vh] ${overlayColor}`} />
+      <div className={`absolute bottom-0 inset-x-0 justify-center h-1/5 lg:h-[10vh] ${overlayColor}`} />
       <div
         className={`
     absolute z-10
     top-0 left-0
     w-full lg:w-[33.3333%]
     h-1/2 lg:h-[70vh]
-    flex flex-col justify-center
+    flex flex-col justify-end
     px-6
     lg:left-[3%]
     lg:px-[1%]
