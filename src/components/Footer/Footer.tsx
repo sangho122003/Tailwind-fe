@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Logo from '@/utils/Logo/Logo';
-
 export default function Footer() {
   return (
     <footer className="bg-primary text-white w-full py-10 h-auto lg:max-h-[50vh] lg:overflow-y-auto">

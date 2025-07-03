@@ -1,8 +1,6 @@
 'use client';
-
 import { useState, useEffect } from 'react';
 import Logo from '@/utils/Logo/Logo';
-
 export default function Menu() {
   const [hasScrolled, setHasScrolled] = useState(false);
   useEffect(() => {

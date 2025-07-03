@@ -1,14 +1,11 @@
 'use client';
-
 import { overlayColor } from '@/utils/color';
-
 type DataHead = {
   id: string;
   image: string;
   title: string;
   title2: string;
 };
-
 export default function HeaderBlock({ data }: { data: DataHead }) {
   return (
     <div
@@ -60,7 +57,7 @@ export default function HeaderBlock({ data }: { data: DataHead }) {
         <p className="text-5xl md:text-6xl lg:text-[5vw] font-gothic text-white">
           {data.title}
         </p>
-        <p className="text-6xl md:text-7xl lg:text-[120px] text-accent lg:text-secondary font-fave italic lg:not-italic">
+        <p className="text-6xl md:text-7xl lg:text-[120px] text-accent  font-fave italic lg:not-italic">
           {data.title2}
         </p>
       </div>

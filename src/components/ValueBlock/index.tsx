@@ -1,9 +1,9 @@
 'use client';
 
 export type ValueBlockData = {
-  Title: string;
-  url: string;
-  Title2: string;
+  id: string;
+  title: string;
+  image: string;
   subject: string;
 };
 
@@ -11,7 +11,7 @@ export default function ValueBlock({ data }: { data: ValueBlockData }) {
   return (
     <div className="relative w-full h-screen">
       <div
-        style={{ backgroundImage: `url(${data.url})` }}
+        style={{ backgroundImage: `url(http://localhost:8080${data.image})` }}
         className={`
           absolute inset-0
           bg-left bg-cover bg-no-repeat
@@ -21,7 +21,7 @@ export default function ValueBlock({ data }: { data: ValueBlockData }) {
         `}
       />
       <div
-        style={{ backgroundImage: `url(${data.url})` }}
+        style={{ backgroundImage: `url(http://localhost:8080${data.image})` }}
         className={`
           absolute inset-0
           bg-[size:200%_100%]
@@ -44,7 +44,7 @@ export default function ValueBlock({ data }: { data: ValueBlockData }) {
               <div className="w-full h-[80%] flex flex-col gap-4">
                 <div className="flex-[1] flex items-center justify-center p-2">
                   <h3 className="text-white leading-tight line-clamp-3 text-[clamp(1rem,3vw,3rem)]">
-                    {data.Title2}
+                    {data.title}
                   </h3>
                 </div>
                 <div className="flex-[2] flex items-center justify-center p-2">
@@ -81,7 +81,7 @@ export default function ValueBlock({ data }: { data: ValueBlockData }) {
               <p className="text-white font-gothic text-[50px] leading-tight">
                 VALUE OF 340B HEALTH
               </p>
-              <p className="text-secondary font-fave text-[100px] leading-tight">
+              <p className="text-accent font-fave text-[100px] leading-tight">
                 Membership
               </p>
             </div>
@@ -103,7 +103,7 @@ export default function ValueBlock({ data }: { data: ValueBlockData }) {
           <div className="h-[30vh] flex flex-col pl-[4.1667%]">
             <div className="h-1/3 flex items-center">
               <h3 className="text-white uppercase text-[clamp(20px,3vw,3rem)] leading-tight font-bold line-clamp-3">
-                {data.Title2}
+                {data.title}
               </h3>
             </div>
             <div className="h-2/3 flex items-center">

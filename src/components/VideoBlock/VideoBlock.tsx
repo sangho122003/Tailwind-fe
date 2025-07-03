@@ -1,4 +1,5 @@
 type video = {
+  id:string;
   url: string;
 };
 

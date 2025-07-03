@@ -1,24 +1,18 @@
 'use client';
-
 import Image from 'next/image';
-
 export type IconData = {
-  Image: string;
+  id: string;
+  image: string;
   title: string;
-  dis: string;
+  description: string;
 };
-
 type BenefitsBlockData = {
-  Title: string;
-  icon1: IconData;
-  icon2: IconData;
-  icon3: IconData;
-  icon4: IconData;
+  id: string;
+  title: string;
+  items: [IconData, IconData, IconData, IconData]
 };
-
 export default function BenefitsBlock({ data }: { data: BenefitsBlockData }) {
-  const icons = [data.icon1, data.icon2, data.icon3, data.icon4];
-
+  const icons = data.items;
   return (
     <section className="w-full py-20 px-6 md:px-[139px]">
       <div className="max-w-6xl mx-auto space-y-16">
@@ -33,7 +27,7 @@ export default function BenefitsBlock({ data }: { data: BenefitsBlockData }) {
           </div>
           <div className="w-full md:w-1/2 text-left">
             <h3 className="text-infotertiary uppercase text-secondary font-extrabold text-[30px] leading-snug ml-0 lg:ml-6">
-              {data.Title}
+              {data.title}
             </h3>
           </div>
         </div>
@@ -43,8 +37,7 @@ export default function BenefitsBlock({ data }: { data: BenefitsBlockData }) {
               <div className="flex flex-col lg:flex-row h-auto lg:h-[140px] gap-4 lg:gap-6 items-start lg:items-center">
                 <div className="relative w-[118px] h-[118px] rounded-xl overflow-hidden flex-shrink-0">
                   <Image
-                    src={icon.Image}
-                    alt={icon.title}
+                    src={`http://localhost:8080${icon.image}`} alt={icon.title}
                     fill
                     className="object-cover"
                   />
@@ -53,7 +46,7 @@ export default function BenefitsBlock({ data }: { data: BenefitsBlockData }) {
                   <strong>{icon.title}</strong>
                 </h3>
               </div>
-              <p className="text-ink text-base leading-relaxed">{icon.dis}</p>
+              <p className="text-ink text-base leading-relaxed">{icon.description}</p>
             </div>
           ))}
         </div>
