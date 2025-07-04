@@ -1,4 +1,6 @@
+'use client';
 
+import useEFetch from '@/hooks/useEFetch';
 
 import BenefitsBlock from '@/components/BenefitsBlock';
 import Footer from '@/components/Footer/Footer';
@@ -9,24 +11,23 @@ import ValueBlock from '@/components/ValueBlock';
 import VideoBlock from '@/components/VideoBlock/VideoBlock';
 import VideoBlockHead from '@/components/VideoBlockHead';
 
-const res = await fetch('http://localhost:8080/index/csuite', {
-  cache: 'no-store',
-});
-const datafetch = await res.json();
-export const metadata = {
-  title: `${datafetch.page.url}`
-};
-export default async function Home() {
+export default function Home() {
+  const { data, loading, error } = useEFetch('http://localhost:8080/index/csuite');
+
+  if (loading) return <p className="p-10 text-center">Loading...</p>;
+  if (error || !data) return <p className="p-10 text-red-500 text-center">Failed to load data</p>;
+
   return (
     <div className="relative">
       <Menu />
       <main>
-        <HeaderBlock data={datafetch.headerBlocks[0]} />
-        <VideoBlockHead data={datafetch.videoBlocks[0]} />
-        <ValueBlock data={datafetch.valueBlocks[0]} />
-        <BenefitsBlock data={datafetch.benefitsBlocks[0]} />
-        <TestimonialBlock data={datafetch.testimonialBlocks[0]} />
-        <VideoBlock data={datafetch.videoBlockSeconds[0]} />
+        {data.headerBlocks?.[0] && <HeaderBlock data={data.headerBlocks[0]} />}
+        {data.videoBlocks?.[0] && <VideoBlockHead data={data.videoBlocks[0]} />}
+        {data.valueBlocks?.[0] && <ValueBlock data={data.valueBlocks[0]} />}
+        {data.benefitsBlocks?.[0] && <BenefitsBlock data={data.benefitsBlocks[0]} />}
+        {data.testimonialBlocks?.[0] && <TestimonialBlock data={data.testimonialBlocks[0]} />}
+        {data.videoBlockSeconds?.[0] && <VideoBlock data={data.videoBlockSeconds[0]} />}
+
       </main>
       <Footer />
     </div>

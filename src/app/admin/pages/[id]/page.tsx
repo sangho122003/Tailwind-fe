@@ -1,4 +1,5 @@
-import HeaderBlockAdminEdit from '@/components/Admin/HeaderBlockAdminEdit';
+import HeaderBlockAdminEdit from '@/components/Admin/HeaderBlock/HeaderBlockAdminEdit';
+import VideoBlockAdminEdit from '@/components/Admin/VideoBlockHead';
 import HeaderBlock from '@/components/HeaderBlock';
 import ValueBlock from '@/components/ValueBlock';
 import VideoBlockHead from '@/components/VideoBlockHead';
@@ -24,12 +25,9 @@ export default function AdminPage({ params }: PageProps) {
               <HeaderBlockAdminEdit pageId={+params.id}/>
             </div>
             <div
-                className="h-[40vh] bg-white relative rounded-xl shadow-md border overflow-hidden border-gray-200 p-10 text-gray-600 text-lg"
+                className="h-auto bg-white relative rounded-xl shadow-md border overflow-hidden border-gray-200 p-10 text-gray-600 text-lg"
             >
-                <h1>VideoBlockHead</h1>
-                <p>urlvideo:</p>
-                <p>title:</p>
-                <p>dis:</p>
+                <VideoBlockAdminEdit pageId={+params.id}/>
              </div>
             <div
                 className="h-[40vh] bg-white relative rounded-xl shadow-md border overflow-hidden border-gray-200 p-10 text-gray-600 text-lg"
