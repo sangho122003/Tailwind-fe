@@ -1,44 +1,59 @@
-import React from 'react';
+'use client';
+import { useState, useEffect } from 'react';
 
-interface Props {
-  title: string;
-  setTitle: (val: string) => void;
-  title2: string;
-  setTitle2: (val: string) => void;
-  setFile: (file: File | null) => void;
-}
+type Props = {
+  initialTitle: string;
+  initialTitle2: string;
+  onSubmit: (data: { title: string; title2: string; file: File | null }) => Promise<void>;
+  onCancel?: () => void;
+  submitLabel: string;
+  error?: string;
+  loading?: boolean;
+};
 
 export default function HeaderBlockForm({
-  title,
-  setTitle,
-  title2,
-  setTitle2,
-  setFile,
+  initialTitle,
+  initialTitle2,
+  onSubmit,
+  onCancel,
+  submitLabel,
+  error,
+  loading = false,
 }: Props) {
+  const [title, setTitle] = useState(initialTitle);
+  const [title2, setTitle2] = useState(initialTitle2);
+  const [file, setFile] = useState<File | null>(null);
+
+  const handleSubmit = async () => {
+    await onSubmit({ title, title2, file });
+  };
+
   return (
-    <>
-      <div className="mb-4">
-        <label className="block font-medium text-gray-700 mb-1">Tiêu đề chính:</label>
-        <input
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          className="border rounded px-3 py-2 w-full"
-          placeholder="Nhập tiêu đề chính"
-        />
+    <div className="w-full p-6 flex gap-5 flex-col">
+      <input
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        className="input-base"
+        placeholder="Main Title"
+      />
+      <input
+        value={title2}
+        onChange={(e) => setTitle2(e.target.value)}
+        className="input-base"
+        placeholder="Sub Title"
+      />
+      <input type="file" onChange={(e) => setFile(e.target.files?.[0] || null)} />
+
+      {error && <p className="text-red-500 text-sm">{error}</p>}
+
+      <div className="flex gap-3">
+        <button onClick={handleSubmit} disabled={loading} className="btn-primary">
+          {submitLabel}
+        </button>
+        {onCancel && (
+          <button onClick={onCancel} className="btn-remove">Cancel</button>
+        )}
       </div>
-      <div className="mb-4">
-        <label className="block font-medium text-gray-700 mb-1">Tiêu đề phụ:</label>
-        <input
-          value={title2}
-          onChange={(e) => setTitle2(e.target.value)}
-          className="border rounded px-3 py-2 w-full"
-          placeholder="Nhập tiêu đề phụ"
-        />
-      </div>
-      <div className="mb-4">
-        <label className="block font-medium text-gray-700 mb-1">Ảnh:</label>
-        <input type="file" onChange={(e) => setFile(e.target.files?.[0] || null)} />
-      </div>
-    </>
+    </div>
   );
 }

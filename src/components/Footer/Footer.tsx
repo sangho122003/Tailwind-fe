@@ -2,8 +2,8 @@ import Image from 'next/image';
 import Logo from '@/utils/Logo/Logo';
 export default function Footer() {
   return (
-    <footer className="bg-primary text-white w-full py-10 h-auto lg:max-h-[50vh] lg:overflow-y-auto">
-      <div className="px-[4.17vw]">
+    <footer className="bg-primary text-white w-full py-10">
+      <div className="px-[4vw]">
         <div className="grid grid-cols-1 lg:grid-cols-[5fr_2fr_8fr_2fr_6fr] gap-y-6">
           <div className="flex justify-start">
             <Logo />
@@ -17,31 +17,31 @@ export default function Footer() {
             </p>
           </div>
           <div />
-          <div className="flex flex-col items-start gap-3 ">
-            <h1 className="text-[13px] sm:text-[15px] md:text-[18px] lg:text-[20px] font-bold whitespace-nowrap">
+          <div className="flex flex-col items-start lg:items-end gap-3 ">
+            <div>  <h1 className="text-3xl sm:text-[15px] md:text-[18px] lg:text-[20px] font-bold mb-5 whitespace-nowrap">
               STAY CONNECTED
             </h1>
-            <div className="flex gap-4">
-              {[
-                '/footer/linkin.png',
-                '/footer/facebook.png',
-                '/footer/x.png',
-                '/footer/youtube.png',
-                '/footer/mail.png',
-              ].map((src, i) => (
-                <div
-                  key={i}
-                  className="relative size-10 sm:size-12 bg-accent rounded-full overflow-hidden"
-                >
-                  <Image
-                    src={src}
-                    alt={`icon-${i}`}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              ))}
-            </div>
+              <div className="flex gap-4">
+                {[
+                  '/footer/linkin.png',
+                  '/footer/facebook.png',
+                  '/footer/x.png',
+                  '/footer/youtube.png',
+                  '/footer/mail.png',
+                ].map((src, i) => (
+                  <div
+                    key={i}
+                    className="relative size-14 sm:size-12 bg-accent rounded-full overflow-hidden"
+                  >
+                    <Image
+                      src={src}
+                      alt={`icon-${i}`}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
+              </div></div>
 
           </div>
         </div>

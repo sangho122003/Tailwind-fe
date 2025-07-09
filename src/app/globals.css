@@ -1,7 +1,4 @@
-/* 👉 1️⃣ Import Typekit Fave */
 @import url('https://use.typekit.net/cul8dnn.css');
-
-/* 👉 2️⃣ Import Tailwind v4 gọn */
 @import "tailwindcss";
 
 @theme {
@@ -11,11 +8,11 @@
   --color-primary: #DA6027;
   --color-secondary: #1C8295;
   --color-accent: #7ACAB9;
-  --color-info:#1C8295;
-  --color-tertiary:#007C96;
-  --color-muted:#1C829599;
-  --color-ink:#1E1E1E
+  --color-tertiary: #007C96;
+  --color-muted: #1C829599;
+  --color-ink: #1E1E1E
 }
+
 @media (prefers-color-scheme: dark) {
   :root {
     --columns: 24;
@@ -29,5 +26,132 @@ body {
       var(--stripe-color-2) calc(100% / var(--columns)),
       var(--stripe-color-2) calc(200% / var(--columns)));
   color: var(--foreground);
+}
+
+@layer utilities {
+  .overlay-yellow::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #DA6027;
+    mix-blend-mode: multiply;
+  }
+
+  .overlay-blue::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #1C8295;
+    mix-blend-mode: multiply;
+  }
+
+  .layout-error {
+    padding: 10px;
+    color: #ef4444;
+    text-align: center;
+  }
+
+  .card-admin {
+    height: auto;
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    padding: 2.5rem;
+    color: #4b5563;
+    font-size: 1.125rem;
+  }
+
+  .card-admin-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    padding: 2.5rem;
+    color: #4b5563;
+    font-size: 1.125rem;
+  }
+
+  .card-admin-fixed {
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    padding: 2.5rem;
+    color: #4b5563;
+    font-size: 1.125rem;
+  }
+
+  .input-base {
+    width: 100%;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-width: 1px;
+    border-color: rgb(209 213 219);
+    border-radius: 0.375rem;
+    outline: none;
+  }
+
+  .btn-primary {
+    background-color: #DA6027;
+    width: 100%;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    background-color: #1C8295;
+  }
+
+  .btn-second {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #1C8295;
+    width: 100%;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .btn-second:hover {
+    background-color: #DA6027;
+  }
+
+  .btn-remove {
+    width: 100%;
+    background-color: #dc2626;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+  }
+
+  .btn-remove:hover {
+    background-color: #b91c1c;
+  }
 
 }

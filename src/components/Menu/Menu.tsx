@@ -1,6 +1,8 @@
 'use client';
+
 import { useState, useEffect } from 'react';
 import Logo from '@/utils/Logo/Logo';
+
 export default function Menu() {
   const [hasScrolled, setHasScrolled] = useState(false);
   useEffect(() => {
@@ -18,7 +20,7 @@ export default function Menu() {
       `}
     >
       <div className="flex-1" />
-      <div className="flex-1 flex px-[4.17vw]">
+      <div className="flex-1 flex px-[4vw]">
         <div className="flex-[5] flex items-center">
           <Logo />
         </div>

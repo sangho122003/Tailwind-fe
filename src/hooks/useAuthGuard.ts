@@ -1,19 +1,15 @@
 'use client';
-
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import api from '@/lib/api';
-
 export default function useAuthGuard() {
   const router = useRouter();
-
   useEffect(() => {
     const token = localStorage.getItem('access_token');
     if (!token) {
       router.push('/login');
       return;
     }
-
     const verify = async () => {
       try {
         await api.get('/auth/me');
@@ -23,7 +19,6 @@ export default function useAuthGuard() {
         router.push('/login');
       }
     };
-
     verify();
   }, [router]);
 }

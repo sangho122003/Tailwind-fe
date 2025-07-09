@@ -1,59 +1,36 @@
 'use client';
 
 export type TestimonialData = {
-  id:string,
+  id: string;
   title: string;
   dis: string;
 };
 
 export default function TestimonialBlock({ data }: { data: TestimonialData }) {
-  return (
-    <div className="w-full bg-[#197D90] text-white">
-      <TestimonialDesktop data={data} />
-      <TestimonialMobile data={data} />
-    </div>
-  );
-}
+  const quoteText = '“The most valuable thing about the 340B membership is certainly the sharing of information, the ability to ask questions and get answers, and it’s everybody working towards the same goal. It’s a huge resource for us.”';
+  const quoteAuthor = 'Tanya Miller';
+  const quoteOrg = 'Signature Healthcare Brockton Hospital, MA';
 
-function TestimonialDesktop({ data }: { data: TestimonialData }) {
   return (
-    <div className="hidden lg:flex flex-col w-full h-[50vh] px-[4.17vw] py-8">
-      <div className="flex flex-1">
-        <div className="flex-[8] flex flex-col justify-center">
-          <h1 className="text-[34px] font-extrabold uppercase leading-tight">
+    <div className="w-full bg-secondary text-white">
+      <div className="flex flex-col lg:flex-row w-full px-5 py-8 lg:px-16 lg:py-25 lg:h-120">
+        <div className="w-full lg:flex-[8] flex flex-col justify-start lg:justify-start mb-7.5 lg:mb-0">
+          <h1 className="text-2xl lg:text-4xl font-extrabold uppercase leading-tight">
             {data.title}
           </h1>
-          <p className="mt-3 text-[14px] leading-relaxed">{data.dis}</p>
+          <p className="mt-2 lg:mt-3 text-xl leading-relaxed">{data.dis}</p>
         </div>
-
-        <div className="flex-[1]" />
-
-        <div className="flex-[12] flex flex-col justify-center">
-          <h2 className="text-[24px] font-omnes leading-tight">
-            “The most valuable thing about the 340B membership is certainly the sharing of information, the ability to ask questions and get answers, and it’s everybody working towards the same goal. It’s a huge resource for us.”
-          </h2>
-          <p className="text-[20px] italic font-normal leading-relaxed mb-4">
-            Tanya Miller
+        <div className="hidden lg:block lg:flex-[1]" />
+        <div className="w-full lg:flex-[12] flex flex-col justify-start lg:justify-start">
+          <p className="text-4xl lg:text-4xl font-omnes leading-snug lg:leading-tight mb-4">
+            {quoteText}
           </p>
-          <p className="text-[14px]">West Virginia University Hospitals, WV</p>
+          <p className="text-base lg:text-2xl italic font-normal leading-relaxed mb-2">
+            <strong>   {quoteAuthor}</strong>
+          </p>
+          <p className="text-xs lg:text-xl">{quoteOrg}</p>
         </div>
       </div>
-    </div>
-  );
-}
-
-function TestimonialMobile({ data }: { data: TestimonialData }) {
-  return (
-    <div className="flex h-auto flex-col p-6 lg:hidden">
-      <h1 className="text-[20px] font-medium leading-tight mb-2">
-        {data.title}
-      </h1>
-      <p className="text-[14px] mb-4">{data.dis}</p>
-      <p className="text-[20px] font-omnes mb-4">“The most valuable thing about the 340B membership is certainly the sharing of information, the ability to ask questions and get answers, and it’s everybody working towards the same goal. It’s a huge resource for us.”</p>
-      <p className="text-[24px] italic font-normal leading-relaxed mb-4">
-        Tanya Miller
-      </p>
-      <p className="text-[14px]">West Virginia University Hospitals, WV</p>
     </div>
   );
 }

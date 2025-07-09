@@ -1,62 +1,25 @@
-import HeaderBlockAdminEdit from '@/components/Admin/HeaderBlock/HeaderBlockAdminEdit';
-import VideoBlockAdminEdit from '@/components/Admin/VideoBlockHead';
-import HeaderBlock from '@/components/HeaderBlock';
-import ValueBlock from '@/components/ValueBlock';
-import VideoBlockHead from '@/components/VideoBlockHead';
-import type { Metadata } from 'next';
-interface PageProps {
-    params: {
-        id: string;
-    };
-}
-export const generateMetadata = ({ params }: PageProps): Metadata => {
-    return {
-        title: `Quản Lý ${params.id}`,
-        description: `Nội dung cho trang ${params.id}`,
-    };
-};
+'use client';
+import { use } from 'react';
+import VideoBlockAdminPage from '@/components/Admin/VideoBlockHead';
+import TestimonialAdminPage from '@/components/Admin/TestimonialBlock';
+import VideoBlockSecondAdminPage from '@/components/Admin/VideoBlock';
+import ValueBlockAdminPage from '@/components/Admin/ValueBlock';
+import BenefitsBlockAdminPage from '@/components/Admin/BenefitsBlock';
+import HeaderBlockAdminPage from '@/components/Admin/HeaderBlock';
+import SubtractAdminPage from '@/components/Admin/SubtractBlock';
+interface PageProps {params: Promise<{id: string}>}
 export default function AdminPage({ params }: PageProps) {
-    return (
-        <div className="p-6 space-y-6">
-
-            <div
-                className="h-[100vh] bg-white relative rounded-xl shadow-md border overflow-hidden border-gray-200 p-10 text-gray-600 text-lg"
-            >
-              <HeaderBlockAdminEdit pageId={+params.id}/>
-            </div>
-            <div
-                className="h-auto bg-white relative rounded-xl shadow-md border overflow-hidden border-gray-200 p-10 text-gray-600 text-lg"
-            >
-                <VideoBlockAdminEdit pageId={+params.id}/>
-             </div>
-            <div
-                className="h-[40vh] bg-white relative rounded-xl shadow-md border overflow-hidden border-gray-200 p-10 text-gray-600 text-lg"
-            >
-                <h1>ValueBlock</h1>
-                <p>image</p>
-                <p>title</p>
-                <p>subject</p>
-            </div>
-            <div
-                className="h-[40vh] bg-white relative rounded-xl shadow-md border overflow-hidden border-gray-200 p-10 text-gray-600 text-lg"
-            >
-                <h1>BenefitsBlock</h1>
-                <p>title</p>
-                <h1>icon:</h1>
-                
-            </div>
-            <div
-                className="h    -[40vh] bg-white relative rounded-xl shadow-md border overflow-hidden border-gray-200 flex items-center justify-center text-gray-600 text-lg"
-            >
-                <h1>TestimonialBlock</h1>
-            </div>
-            <div
-                className="h-[40vh] bg-white relative rounded-xl shadow-md border overflow-hidden border-gray-200 flex items-center justify-center text-gray-600 text-lg"
-            >
-                <h1>VideoBlock</h1>
-            </div>
-
-
-        </div>
-    );
+  const { id } = use(params);
+  const pageId = +id;
+  return (
+    <div className="p-6 space-y-6">
+      <div className="card-admin"><HeaderBlockAdminPage pageId={pageId}/></div>
+      <div className="card-admin"><VideoBlockAdminPage pageId={pageId}/></div>
+      <div className="card-admin"><ValueBlockAdminPage pageId={pageId}/></div>
+      <div className="card-admin"><BenefitsBlockAdminPage pageId={pageId}/></div>
+      <div className="card-admin"><TestimonialAdminPage pageId={pageId}/></div>
+      <div className="card-admin"><SubtractAdminPage pageId={pageId}/></div>
+      <div className="card-admin"><VideoBlockSecondAdminPage pageId={pageId}/></div>
+    </div>
+  );
 }

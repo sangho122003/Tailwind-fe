@@ -1,27 +1,22 @@
-// hooks/useEFetch.ts
-import { useState, useEffect } from 'react';
-
+import { useEffect, useState } from 'react';
+import api from '@/lib/api';
 export default function useEFetch<T = any>(url: string) {
   const [data, setData] = useState<T | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<any>(null);
-
   useEffect(() => {
+    let isMounted = true;
     const fetchData = async () => {
       try {
-        const res = await fetch(url);
-        if (!res.ok) throw new Error(`HTTP error ${res.status}`);
-        const json = await res.json();
-        setData(json);
+        const response = await api.get(url);
+        if (isMounted) {setData(response.data);}
       } catch (err) {
-        setError(err);
+        if (isMounted) {setError(err);}
       } finally {
-        setLoading(false);
+        if (isMounted) {setLoading(false)}
       }
     };
-
     fetchData();
-  }, [url]);
-
+    return () => { isMounted = false;}}, [url]);
   return { data, loading, error };
 }

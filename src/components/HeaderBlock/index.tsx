@@ -1,68 +1,48 @@
 'use client';
 import { overlayColor } from '@/utils/color';
+
 type DataHead = {
   id: string;
   image: string;
   title: string;
   title2: string;
 };
+
 export default function HeaderBlock({ data }: { data: DataHead }) {
+  const imageUrl = `${process.env.NEXT_PUBLIC_BACKEND_URL}${data.image}`;
   return (
     <div
-      className={`
-        relative w-full 
-        h-[66.6667vh] lg:h-screen 
-        bg-no-repeat bg-cover 
-        lg:bg-right
-      `}
-      style={{
-        backgroundImage: `url(http://localhost:8080${data.image})`,
-        backgroundSize: '200% 100%',
-        backgroundPosition: 'right center',
-        backgroundRepeat: 'no-repeat',
-      }}
+      className="
+        relative w-full h-160 lg:h-180 bg-no-repeat 
+        bg-[length:200%_100%] lg:bg-cover bg-[position:right_center] lg:bg-right
+      "
+      style={{ backgroundImage: `url(${imageUrl})` }}
     >
-      <div
-        className="hidden lg:block absolute inset-0"
-        style={{
-          backgroundImage: `url(http://localhost:8080${data.image})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'right',
-          backgroundRepeat: 'no-repeat',
-        }}
-      />
-      <div className={`absolute top-0 inset-x-0 h-1/2 lg:h-[20vh] ${overlayColor}`} />
-      <div className={`lg:hidden absolute top-1/2 left-0 w-3/24 h-3/10 ${overlayColor}`} />
-      <div className={`lg:hidden absolute top-1/2 right-0 w-2/24 h-3/10 ${overlayColor}`} />
-      <div className="hidden lg:grid grid-cols-24 h-[70vh] w-full absolute top-[20vh] left-0">
-        <div className={`col-span-1 ${overlayColor}`} />
-        <div className={`col-span-8 ${overlayColor}`} />
-        <div className="col-span-14" />
-        <div className={`col-span-1 ${overlayColor}`} />
-      </div>
+      <div className="hidden lg:block relative w-full h-32 overlay-yellow" />
+      <div className="block h-56.5 w-full lg:flex relative lg:w-full lg:h-119">
+        <div className=" lg:w-11/24 h-full overlay-yellow relative lg:flex lg:items-center ">
+          <div className="relative px-[4vw] pt-21 z-10 lg:pl-15">
+            <p className="text-6xl md:text-6xl lg:text-27.5 font-gothic text-white">
+              {data.title}
+            </p>
+            <p className="text-6xl md:text-7xl lg:text-9xl text-accent font-fave italic lg:not-italic">
+              {data.title2}
+            </p>
+          </div>
 
-      <div className={`absolute bottom-0 inset-x-0 justify-center h-1/5 lg:h-[10vh] ${overlayColor}`} />
-      <div
-        className={`
-    absolute z-10
-    top-0 left-0
-    w-full lg:w-[33.3333%]
-    h-1/2 lg:h-[70vh]
-    flex flex-col justify-end
-    px-6
-    lg:left-[3%]
-    lg:px-[1%]
-  `}
-      >
-        <p className="text-5xl md:text-6xl lg:text-[5vw] font-gothic text-white">
-          {data.title}
-        </p>
-        <p className="text-6xl md:text-7xl lg:text-[120px] text-accent  font-fave italic lg:not-italic">
-          {data.title2}
-        </p>
+        </div>
+        <div className='lg:hidden flex w-full'>
+          <div className='w-2/10 h-80 relative overlay-yellow'></div>
+          <div className='w-7/10'></div>
+          <div className='w-1/10 h-80 relative overlay-yellow'></div>
+        </div>
+        <div className='lg:hidden w-full h-22.5 relative overlay-yellow '></div>
+        <div className=" hidden lg:w-13/24 lg:h-full lg:flex">
+          <div className="h-full w-12/13" />
+          <div className="h-full w-1/13 relative overlay-yellow" />
+        </div>
       </div>
-      <div className="lg:hidden h-3/10" />
-      <div className="lg:hidden h-1/5" />
+      <div className="hidden lg:block relative w-full h-29 overlay-yellow" />
     </div>
   );
 }
