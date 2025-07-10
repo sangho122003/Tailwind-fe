@@ -9,7 +9,9 @@ export const ERROR_MESSAGES = {
   Fail_SEND_DATA:'Failed to send data',
   FAIL_DELETE:'Failed to delete',
   UPDATE_FAIL:'Update failed!',
-  FAIL_UPDATE_DATA:'Update failed'
+  FAIL_UPDATE_DATA:'Update failed',
+  DELETE_NOT_SUCCESS:'Delete successful',
+  MISS_FILE:"Missing required fields."
 };
 export const CRUD_MESSAGES = {
   LOAD_FAILED: 'Failed to load data.',
@@ -18,4 +20,5 @@ export const CRUD_MESSAGES = {
   CREATE_PAGE_FAILED: 'Failed to create the page.',
   EXAMPLE_INPUT_CREATE_PAGE:'Example: Power, Low (eror admin, login, or other reserved pages)',
   COMFIRM_DELETE:'Confirm deletion ?',
+  DO_YOU_WANT_DELETE:"Are you sure you want to delete this page?",
 };

@@ -8,4 +8,14 @@ export interface VideoBlock {
     name: string;
     url: string;
   };
+} 
+export type Props = {
+  initialUrl?: string
+  initialTitle?: string
+  initialDescription?: string
+  onSubmit: (url: string, title: string, description: string) => Promise<void>
+  submitLabel: string
+  loading?: boolean
+  error?: string
+  onCancel?: () => void
 }

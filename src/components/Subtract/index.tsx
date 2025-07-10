@@ -1,12 +1,4 @@
-'use client';
-import { useEffect, useState } from 'react';
-import { overlayColor } from '@/utils/color';
-type dataSubtract = {
-  id: number;
-  image: string;
-  title: string;  
-  dis: string;
-};
+import { dataSubtract } from "./type"
 export default function Subtract({ data }: { data: dataSubtract }) {
   const imageUrl = `${process.env.NEXT_PUBLIC_BACKEND_URL}${data.image}`
   return (<div

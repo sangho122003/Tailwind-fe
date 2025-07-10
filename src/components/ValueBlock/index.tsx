@@ -1,13 +1,6 @@
-  'use client';
+import { ValueBlockData } from "./type";
 
-  export type ValueBlockData = {
-    id: string;
-    title: string;
-    image: string;
-    subject: string;
-  };
-
-  export default function ValueBlock({ data }: { data: ValueBlockData }) {
+export default function ValueBlock({ data }: { data: ValueBlockData }) {
     return (
       <div className="relative w-full h-screen">
         <div

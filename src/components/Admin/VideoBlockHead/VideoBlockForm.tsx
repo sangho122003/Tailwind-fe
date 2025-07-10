@@ -2,17 +2,7 @@
 
 import { useState } from 'react'
 import { ERROR_MESSAGES } from '@/constants/messages'
-
-interface Props {
-  initialUrl?: string
-  initialTitle?: string
-  initialDescription?: string
-  onSubmit: (url: string, title: string, description: string) => Promise<void>
-  submitLabel: string
-  loading?: boolean
-  error?: string
-  onCancel?: () => void
-}
+import { Props } from './type'
 
 export default function VideoBlockForm({
   initialUrl = '',
@@ -56,7 +46,7 @@ export default function VideoBlockForm({
         placeholder="Description"
         className="input-base w-full"
       />
-      {error && <p className="text-red-500 text-sm">{error}</p>}
+      {error && <p className="layout-error">{error}</p>}
       <div className="flex gap-2">
         <button onClick={handleSubmit} disabled={loading} className="btn-primary">
           {submitLabel}

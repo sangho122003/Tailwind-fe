@@ -1,17 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { BenefitItemType } from './type'
-
-type Props = {
-  initialTitle: string
-  initialItems: BenefitItemType[]
-  onSubmit: (title: string, items: BenefitItemType[]) => Promise<void>
-  submitLabel: string
-  loading?: boolean
-  error?: string
-  onCancel?: () => void
-}
-
+import { BenefitItemType,Props } from './type'
 export default function BenefitsBlockForm({
   initialTitle,
   initialItems,

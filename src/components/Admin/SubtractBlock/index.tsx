@@ -6,6 +6,7 @@
   import ReadSubtract from './ReadSubtract'
   import UpdateSubtract from './UpdateSubtract'
   import api from '@/lib/api'
+import { ERROR_MESSAGES } from '@/constants/messages'
 
   export default function SubtractAdminPage({ pageId }: { pageId: number }) {
     const [data, setData] = useState<dataSubtract | null>(null)
@@ -20,7 +21,7 @@
         setData(res.data[0] || null)
         setEditMode(false)
       } catch {
-        setError('Không thể tải dữ liệu')
+        setError(ERROR_MESSAGES.LOAD_FAILED)
       } finally {
         setLoading(false)
       }

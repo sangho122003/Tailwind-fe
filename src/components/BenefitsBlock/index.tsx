@@ -1,16 +1,7 @@
 'use client';
 import Image from 'next/image';
-export type IconData = {
-  id: string;
-  image: string;
-  title: string;
-  description: string;
-};
-type BenefitsBlockData = {
-  id: string;
-  title: string;
-  items: [IconData, IconData, IconData, IconData]
-};
+import { BenefitsBlockData } from './type';
+
 export default function BenefitsBlock({ data }: { data: BenefitsBlockData }) {
   const icons = data.items;
   return (

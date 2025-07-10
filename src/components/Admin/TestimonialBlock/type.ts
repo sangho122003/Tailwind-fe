@@ -8,3 +8,12 @@ export interface Testimonial {
     url: string
   }
 }
+export type TestimonialFormProps = {
+  initialTitle?: string
+  initialDescription?: string
+  submitLabel: string
+  loading?: boolean
+  error?: string
+  onCancel?: () => void
+  onSubmit: (title: string, description: string) => Promise<void>
+}

@@ -44,7 +44,7 @@ export default function HeaderBlockForm({
       />
       <input type="file" onChange={(e) => setFile(e.target.files?.[0] || null)} />
 
-      {error && <p className="text-red-500 text-sm">{error}</p>}
+      {error && <p className="layout-error">{error}</p>}
 
       <div className="flex gap-3">
         <button onClick={handleSubmit} disabled={loading} className="btn-primary">

@@ -1,9 +1,6 @@
-'use client';
-type video = {
-  id: string;
-  url: string;
-};
-export default function VideoBlock({ data }: { data: video }) {
+import { Datavideo } from "./type";
+
+export default function VideoBlock({ data }: { data: Datavideo }) {
   return (
     <div className="w-full h-auto relative">
       <div className="w-full lg:px-36 lg:py-35 flex flex-col px-4 py-8 lg:flex-row">

@@ -2,22 +2,10 @@
 
 import { useState, useEffect } from 'react'
 import { ERROR_MESSAGES } from '@/constants/messages'
-
-type Props = {
-  initialTitle?: string
-  initialDescription: string
-  initialSubTitle?: string
-  onSubmit: (title: string, subTitle: string, file?: File | null) => Promise<void>
-  submitLabel: string
-  loading?: boolean
-  error?: string
-  onCancel?: () => void
-  isUpdate?: boolean
-}
-
-export default function HeaderBlockForm({
+import { Props } from './type'
+export default function ValueBlockForm({
   initialTitle = '',
-  initialSubTitle = '',
+  initialDescription = '',
   onSubmit,
   submitLabel,
   loading = false,
@@ -26,7 +14,7 @@ export default function HeaderBlockForm({
   isUpdate = false
 }: Props) {
   const [title, setTitle] = useState(initialTitle)
-  const [subTitle, setSubTitle] = useState(initialSubTitle)
+  const [description, setDescription] = useState(initialDescription)
   const [file, setFile] = useState<File | null>(null)
   const [preview, setPreview] = useState<string | null>(null)
 
@@ -41,15 +29,15 @@ export default function HeaderBlockForm({
   }, [file])
 
   const handleSubmit = async () => {
-    if (!title || !subTitle || (!file && !isUpdate)) {
+    if (!title || !description || (!file && !isUpdate)) {
       alert(ERROR_MESSAGES.MISSING_DATA)
       return
     }
-    await onSubmit(title, subTitle, file)
+    await onSubmit(title, description, file)
   }
 
   return (
-    <div className=" p-6 w-full mx-auto bg-white">
+    <div className="p-6 w-full mx-auto bg-white">
       {!isUpdate && (
         <div>
           <label className="block font-medium mb-1">Upload Image</label>
@@ -59,26 +47,26 @@ export default function HeaderBlockForm({
       )}
 
       <div>
-        <label className="block font-medium mb-1">Main Title</label>
+        <label className="block font-medium mb-1">Title</label>
         <input
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          placeholder="Main Title"
+          placeholder="Title"
           className="input-base w-full"
         />
       </div>
 
       <div>
-        <label className="block font-medium mb-1">Sub Title</label>
+        <label className="block font-medium mb-1">Description</label>
         <input
-          value={subTitle}
-          onChange={(e) => setSubTitle(e.target.value)}
-          placeholder="Sub Title"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          placeholder="Description"
           className="input-base w-full"
         />
       </div>
 
-      {error && <p className="text-red-500 text-sm">{error}</p>}
+      {error && <p className="layout-error">{error}</p>}
 
       <div className="flex gap-3 mt-4">
         <button onClick={handleSubmit} disabled={loading} className="btn-primary">

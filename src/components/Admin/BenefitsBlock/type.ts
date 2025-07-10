@@ -11,3 +11,12 @@ export type BenefitsBlockType = {
   title: string
   items: BenefitItemType[]
 }
+export type Props = {
+  initialTitle: string
+  initialItems: BenefitItemType[]
+  onSubmit: (title: string, items: BenefitItemType[]) => Promise<void>
+  submitLabel: string
+  loading?: boolean
+  error?: string
+  onCancel?: () => void
+}

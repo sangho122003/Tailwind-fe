@@ -1,11 +1,5 @@
-'use client';
+import { videodata } from "./type";
 
-export type videodata = {
-  id: string;
-  urlvideo: string;
-  title: string;
-  dis: string;
-};
 export default function VideoBlockHead({ data }: { data: videodata }) {
   return (
     <div className="w-full px-[4vw] py-6  lg:py-28">

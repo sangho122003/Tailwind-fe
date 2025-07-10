@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { useApiHelper } from '@/hooks/useApiHelper';
 import HeaderBlockForm from './HeaderBlockForm';
+import { ERROR_MESSAGES } from '@/constants/messages';
 
 export default function CreateHeaderBlock({
   pageId,
@@ -22,7 +23,7 @@ export default function CreateHeaderBlock({
     file: File | null;
   }) => {
     if (!title || !title2 || !file) {
-      setError('Missing required fields.');
+      setError(ERROR_MESSAGES.MISS_FILE);
       return;
     }
 

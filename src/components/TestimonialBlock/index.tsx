@@ -1,11 +1,4 @@
-'use client';
-
-export type TestimonialData = {
-  id: string;
-  title: string;
-  dis: string;
-};
-
+import { TestimonialData } from "./type";
 export default function TestimonialBlock({ data }: { data: TestimonialData }) {
   const quoteText = '“The most valuable thing about the 340B membership is certainly the sharing of information, the ability to ask questions and get answers, and it’s everybody working towards the same goal. It’s a huge resource for us.”';
   const quoteAuthor = 'Tanya Miller';

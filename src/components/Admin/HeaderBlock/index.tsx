@@ -4,8 +4,8 @@ import { HeaderBlock } from './type';
 import CreateHeaderBlock from './CreateHeaderBlock';
 import ReadHeaderBlock from './ReadHeaderBlock';
 import UpdateHeaderBlock from './UpdateHeaderBlock';
-import DeleteHeaderBlock from './DeleteHeaderBlock';
 import api from '@/lib/api';
+import { ERROR_MESSAGES } from '@/constants/messages';
 export default function HeaderBlockAdminPage({ pageId }: { pageId: number }) {
   const [data, setData] = useState<HeaderBlock | null>(null);
   const [editMode, setEditMode] = useState(false);
@@ -18,7 +18,7 @@ export default function HeaderBlockAdminPage({ pageId }: { pageId: number }) {
       setData(res.data[0] || null);
       setEditMode(false);
     } catch {
-      setError('Không thể tải dữ liệu');
+      setError(ERROR_MESSAGES.LOAD_FAILED);
     } finally {
       setLoading(false);
     }

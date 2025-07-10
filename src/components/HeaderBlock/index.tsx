@@ -1,13 +1,5 @@
 'use client';
-import { overlayColor } from '@/utils/color';
-
-type DataHead = {
-  id: string;
-  image: string;
-  title: string;
-  title2: string;
-};
-
+import { DataHead } from './type';
 export default function HeaderBlock({ data }: { data: DataHead }) {
   const imageUrl = `${process.env.NEXT_PUBLIC_BACKEND_URL}${data.image}`;
   return (

@@ -1,16 +1,6 @@
 'use client'
 import { useState } from 'react'
-
-interface TestimonialFormProps {
-  initialTitle?: string
-  initialDescription?: string
-  submitLabel: string
-  loading?: boolean
-  error?: string
-  onCancel?: () => void
-  onSubmit: (title: string, description: string) => Promise<void>
-}
-
+import { TestimonialFormProps } from './type'
 export default function TestimonialForm({
   initialTitle = '',
   initialDescription = '',

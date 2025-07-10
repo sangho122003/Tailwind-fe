@@ -1,16 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-
-type Props = {
-  initialTitle?: string
-  initialDis?: string
-  onSubmit: (data: { title: string; dis: string; file: File | null }) => Promise<void>
-  onCancel?: () => void
-  submitLabel: string
-  error?: string
-  loading?: boolean
-}
+import {Props} from './type'
 
 export default function SubtractForm({
   initialTitle = '',
@@ -50,7 +41,7 @@ export default function SubtractForm({
         accept="image/*"
       />
 
-      {error && <p className="text-red-500 text-sm">{error}</p>}
+      {error && <p className="layout-error">{error}</p>}
 
       <div className="flex gap-3">
         <button onClick={handleSubmit} disabled={loading} className="btn-primary">

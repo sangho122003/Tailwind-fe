@@ -2,16 +2,7 @@
 
 import { useState } from 'react'
 import { ERROR_MESSAGES } from '@/constants/messages'
-
-type Props = {
-  initialUrl?: string
-  onSubmit: (url: string) => Promise<void>
-  submitLabel: string
-  loading?: boolean
-  error?: string
-  onCancel?: () => void
-}
-
+import { Props } from './type'
 export default function VideoBlockSecondForm({
   initialUrl = '',
   onSubmit,
@@ -39,7 +30,7 @@ export default function VideoBlockSecondForm({
         placeholder="https://www.youtube.com/embed/abc123"
         className="input-base w-full"
       />
-      {error && <p className="text-red-500 text-sm">{error}</p>}
+      {error && <p className="layout-error">{error}</p>}
       <div className="flex gap-2">
         <button onClick={handleSubmit} disabled={loading} className="btn-primary">
           {submitLabel}

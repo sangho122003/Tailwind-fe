@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react'
 import { ChevronRight, ChevronDown, LayoutDashboard, Pencil, Trash2, Plus } from 'lucide-react'
 import Link from 'next/link'
 import { useApiHelper } from '@/hooks/useApiHelper' 
-interface PageItem {
+import { CRUD_MESSAGES, ERROR_MESSAGES } from '@/constants/messages'
+type PageItem ={
   id: number
   url: string
 }
@@ -31,11 +32,11 @@ export default function Sidebar() {
   }, [])
 
   const handleDelete = async (id: number) => {
-    const success = await deleteData(`/page/${id}`, 'Bạn có chắc muốn xoá trang này không?')
+    const success = await deleteData(`/page/${id}`, CRUD_MESSAGES.DO_YOU_WANT_DELETE)
     if (success) {
       setPages(pages.filter((p) => p.id !== id))
     } else {
-      alert('Xoá không thành công.')
+      alert(ERROR_MESSAGES.DELETE_NOT_SUCCESS)
     }
   }
 
